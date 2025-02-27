@@ -84,17 +84,11 @@ def predict_image(image_path):
     img = np.expand_dims(img, axis=0)  # Reshape for model input
 
     prediction = model.predict(img)
+    print("pred",prediction[0][0])
     return "Real" if prediction[0][0] > 0.5 else "Fake"
 
 # Example usage:
-image_path = "fake_911.jpg"
+image_path = "fake_test_3.jpg"
 result = predict_image(image_path)
 print(f"Prediction: {result}")
 
-# plt.plot(history.history["accuracy"], label="Train Accuracy")
-# plt.plot(history.history["val_accuracy"], label="Validation Accuracy")
-# plt.legend()
-# plt.xlabel("Epochs")
-# plt.ylabel("Accuracy")
-# plt.title("Training Performance")
-# plt.show()
